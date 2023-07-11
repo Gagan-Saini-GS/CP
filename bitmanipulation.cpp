@@ -1,5 +1,4 @@
 #include <iostream>
-#include <set>
 #define ll long long
 using namespace std;
 
@@ -58,15 +57,18 @@ bool isPower2(int n)
     // Method 1 use countSetBits(n) if it return 1 then true else false
 
     // Method 2 Direct Method
-    while (n)
-    {
-        if (n % 2 != 0 && n != 1)
-            return false;
+    // while (n)
+    // {
+    //     if (n % 2 != 0 && n != 1)
+    //         return false;
 
-        n >>= 1;
-    }
+    //     n >>= 1;
+    // }
 
-    return true;
+    // return true;
+
+    // Method 3
+    return (n & (n - 1)) == 0;
 }
 
 // 248 => 256
@@ -91,19 +93,6 @@ ll nearstPower2(ll n)
 
 int main()
 {
-    set<pair<int, int>> st;
-    st.insert({3, 0});
-    st.insert({3, 6});
-    st.insert({2, 1});
-    st.insert({4, 2});
-    st.insert({1, 3});
-    st.insert({5, 4});
-
-    for (auto &it : st)
-    {
-        cout << it.first << " " << it.second << endl;
-    }
-
     // ll n, pos;
     // cin >> n >> pos;
     // cout << "N = " << n << endl;
