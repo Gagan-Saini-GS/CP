@@ -94,13 +94,25 @@ int rangeBitwiseAnd(int left, int right)
 
 int main()
 {
-    int n;
-    cin >> n;
+    // int n;
+    // cin >> n;
 
-    vector<int> ans = sieve(n);
-    for (int i = 0; i < ans.size(); i++)
-        cout << ans[i] << " ";
+    // vector<int> ans = sieve(n);
+    // for (int i = 0; i < ans.size(); i++)
+    //     cout << ans[i] << " ";
 
-    cout << endl;
+    // cout << endl;
+
+    priority_queue<int> pq;
+    pq.push(1);
+    pq.push(2);
+    pq.push(3);
+
+    while (pq.size() != 0)
+    {
+        cout << pq.top() << endl;
+        pq.pop();
+    }
+
     return 0;
 }
